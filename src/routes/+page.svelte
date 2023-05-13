@@ -10,9 +10,14 @@
 
 
     <Homepage></Homepage>
+    <div class="spacing"></div>
     <Expertise></Expertise>
     <Clients></Clients>
 
 
 <style lang="scss">
+    .spacing {
+        width: 100%;
+        height: 70vh;
+    }
 </style>

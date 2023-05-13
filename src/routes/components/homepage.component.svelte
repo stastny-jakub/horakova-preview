@@ -70,7 +70,7 @@
                 trigger: section,
                 scrub: 1,
                 start: "top+=1 top",
-                end: "75% top",
+                end: "100% top",
                 pin: true,
                 markers: false,
                 pinSpacing: false,
