@@ -8,7 +8,7 @@
 </script>
 
 
-
+    <Loading></Loading>
     <Homepage></Homepage>
     <div class="spacing"></div>
     <Expertise></Expertise>
