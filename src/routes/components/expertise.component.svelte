@@ -25,20 +25,20 @@
             imgPath: "./mind.svg"
         },
         {
-            text: "Intelectual property",
-            imgPath: "./mind.svg"
+            text: "Coporate law",
+            imgPath: "./house.svg"
         },
         {
-            text: "Intelectual property",
-            imgPath: "./mind.svg"
+            text: "Crypto assets",
+            imgPath: "./documents.svg"
         },
         {
-            text: "Intelectual property",
-            imgPath: "./mind.svg"
+            text: "M&A",
+            imgPath: "./crypto.svg"
         },
         {
-            text: "Intelectual property",
-            imgPath: "./mind.svg"
+            text: "open banking",
+            imgPath: "./conversion.svg"
         },
     ]
 
@@ -61,15 +61,15 @@
             y: overflow * (-relativePositionY / 100)
         })
         let xTransformIndex = 5
-        animation2 = gsap.to(".expertise .right > div", {
-            translateX: relativePositionX / (1 * xTransformIndex) - (50 / xTransformIndex) + "%",
-        })
-        console.debug(relativePositionYRaw)
+
     }
     const handleOver = (e) => {
         let target = e.currentTarget.dataset.for;
+        let targetText = e.currentTarget.dataset.fortext;
         let targetEl = document.querySelector(`#${target}`);
+        let targetElText = document.querySelector(`#${targetText}`);
         let otherEl = document.querySelectorAll(`.expertise .right > div:not(#${target})`);
+        let otherElText = document.querySelectorAll(`.expertise .right > p:not(#${target})`);
 
         gsap.killTweensOf(targetEl);
         gsap.killTweensOf(otherEl);
@@ -88,13 +88,21 @@
             scale: 1,
             ease: "back.out"
         })
+        gsap.to(otherElText, {
+            opacity: 0,
+            duration: 0.1
+        })
+        gsap.to(targetElText, {
+            opacity: 1,
+            ease: "back.out"
+        })
     }
 
     onMount(() => {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".expertise",
-                start: "75% bottom",
+                start: "top bottom",
                 end: "bottom bottom",
                 scrub: 1,
                 markers: false,
@@ -124,7 +132,7 @@
         <div class="left" bind:this={left} on:mousemove={handleMove}>
             <div class="wrapper" bind:this={wrapper}>
                 {#each expertiseItems as item, index}
-                    <span data-for={"expertise-item-" + index} on:mouseover={handleOver}>{item.text}</span>
+                    <span data-for={"expertise-item-" + index} data-fortext={"expertise-text-" + index} on:mouseover={handleOver}>{item.text}</span>
                 {/each}
             </div>
         </div>
@@ -132,6 +140,7 @@
             {#each expertiseItems as item, index}
                 <div id={"expertise-item-" + index} style:background-image={"url('" + item.imgPath + "')"}
                      class="image"></div>
+                <p id={"expertise-text-" + index} class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             {/each}
         </div>
     </div>
@@ -195,7 +204,16 @@
                 margin-left: 20px;
                 display: flex;
                 position: relative;
-
+                justify-content: center;
+                align-items: flex-end;
+                .text {
+                    color: white;
+                    opacity: 0;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                }
                 .image {
                     position: absolute;
                     left: 50%;
