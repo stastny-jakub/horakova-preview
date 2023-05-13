@@ -140,7 +140,7 @@
             {#each expertiseItems as item, index}
                 <div id={"expertise-item-" + index} style:background-image={"url('" + item.imgPath + "')"}
                      class="image"></div>
-                <p id={"expertise-text-" + index} class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <p id={"expertise-text-" + index} class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad</p>
             {/each}
         </div>
     </div>
