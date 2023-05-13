@@ -43,7 +43,7 @@
         })
     });
 </script>
-<section class="clients">
+<section class="clients" id="clients">
     <div class="text-container">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
     </div>

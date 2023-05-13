@@ -1,5 +1,17 @@
 <script>
+    import {gsap} from "gsap/dist/gsap";
+
     export let navBind;
+
+    const handleClick = (e)=>{
+        e.preventDefault();
+        let target = document.querySelector(`#${e.currentTarget.dataset.for}`)
+        if(!target) return;
+        gsap.to(window, {
+            duration: 2,
+            scrollTo: e.currentTarget.dataset.for === "home" ? {y: 0} : target
+        })
+    }
 </script>
 <nav bind:this={navBind}>
     <div class="top-left-corner">
@@ -34,13 +46,13 @@
             </svg>
         </a>
         <div class="horizontal-line"></div>
-        <a href="" class="active">About</a>
+        <a on:click={handleClick} data-for="home" href="" class="active">About</a>
         <div class="horizontal-line"></div>
-        <a href="">Expertise</a>
+        <a on:click={handleClick} data-for="expertise" href="">Expertise</a>
         <div class="horizontal-line"></div>
-        <a href="">Members</a>
+        <a on:click={handleClick} data-for="members" href="">Members</a>
         <div class="horizontal-line"></div>
-        <a href="">Clients</a>
+        <a on:click={handleClick} data-for="clients" href="">Clients</a>
         <div class="horizontal-line"></div>
         <a class="mobile-menu" href=""><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 7H21" stroke="white" stroke-width="1.5" stroke-linecap="round"/>

@@ -44,7 +44,7 @@
         }, "<")
     });
 </script>
-<section class="members" bind:this={container}>
+<section id="members" class="members" bind:this={container}>
     <div class="left-line">
         <div class="line"></div>
     </div>

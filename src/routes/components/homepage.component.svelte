@@ -99,7 +99,7 @@
         });
     })
 </script>
-<section class="homepage" bind:this={section}>
+<section class="homepage" bind:this={section} id="home">
     <Navigation bind:navBind={nav}/>
     <div class="canvas" on:mousemove={handleMouseMove}>
         <div bind:this={cloudContainer} class="cloud-container">
