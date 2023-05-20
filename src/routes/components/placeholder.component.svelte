@@ -80,7 +80,7 @@
         .bottom-line {
             grid-area: 3 / 1 / 4 / 4;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             .hor-line {
                 height: 1px;
                 width: 100%;
@@ -88,14 +88,14 @@
             }
             .l-corner {
                 width: 1px;
-                height: calc(50% + 1px);
+                height: 100%;
                 background-color: $borderColor;
                 margin-bottom: auto;
                 margin-left: calc($navWidth / 2 - 0.5px);
             }
             .r-corner {
                 width: 1px;
-                height: calc(50% + 1px);
+                height: 100%;
                 background-color: $borderColor;
                 margin-bottom: auto;
                 margin-right: calc($navWidth / 2 - 0.5px);
