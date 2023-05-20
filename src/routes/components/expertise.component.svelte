@@ -12,7 +12,6 @@
     let wrapper;
 
     let animation;
-    let animation2;
     let nav;
 
     let expertiseItems = [

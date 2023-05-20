@@ -1,3 +1,24 @@
+<script>
+    import {gsap} from "gsap/dist/gsap";
+    import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+    import {onMount} from "svelte";
+    gsap.registerPlugin(ScrollTrigger);
+
+    onMount(()=>{
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".members",
+                start: "top bottom",
+                end: "bottom bottom",
+                scrub: 1,
+                markers: true,
+            },
+        });
+        tl.to(".dark-background", {
+            opacity: 1
+        })
+    })
+</script>
 <section id="members" class="members">
     <div class="left-line">
         <div class="line"></div>

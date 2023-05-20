@@ -203,6 +203,7 @@
                 grid-column: 1 / 4;
                 .cloud-container {
                     font-size: 2.3vw;
+
                     width: 100%;
                     h1 {
                         font-size: 5em;
@@ -226,6 +227,7 @@
                         width: 5em;
                         left: 21.5em;
                         top: 4.5em;
+                        box-shadow: black 0 0 0 3px, #333333 0 0 0 4px, #434343 0 0 0 5px, #626262 0 0 0 6px;
                         img {
                             display: none;
                         }
