@@ -11,7 +11,7 @@
                 start: "top bottom",
                 end: "bottom bottom",
                 scrub: 1,
-                markers: true,
+                markers: false,
             },
         });
         tl.to(".dark-background", {
